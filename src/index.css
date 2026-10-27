@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-100 text-slate-900 font-sans text-xs antialiased;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #111827;
+  }
+
+  /* Reset inputs and buttons to classic software controls */
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+}
+
+/* Utilitarian desktop scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-left: 1px solid #cbd5e1;
+  border-top: 1px solid #cbd5e1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 1px solid #94a3b8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Classic desktop button styling */
+.btn-classic {
+  @apply inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-900 border border-slate-400 text-xs font-medium cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed;
+  border-radius: 1px;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-1.5 px-4 py-1.5 bg-slate-800 hover:bg-slate-900 active:bg-black text-white border border-slate-900 text-xs font-medium cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed;
+  border-radius: 1px;
+}
+
+.btn-toolbar {
+  @apply inline-flex items-center gap-1 px-2.5 py-1 text-slate-800 hover:bg-slate-200 active:bg-slate-300 text-xs font-medium border border-transparent hover:border-slate-300 disabled:opacity-40 disabled:cursor-not-allowed;
+  border-radius: 1px;
+}
+
+/* Classic dense table styling */
+.table-dense {
+  @apply w-full border-collapse border border-slate-300 text-xs;
+}
+.table-dense th {
+  @apply border border-slate-300 bg-slate-100 px-2.5 py-1.5 text-left font-semibold text-slate-800 text-[11px] uppercase tracking-wider select-none;
+}
+.table-dense td {
+  @apply border border-slate-300 px-2.5 py-1 text-slate-900;
+}
+.table-dense tr:nth-child(even) {
+  @apply bg-slate-50/60;
+}
+.table-dense tr:hover {
+  @apply bg-blue-50/50;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  table, tr, td, th {
+    border-color: #000000 !important;
+  }
+}
